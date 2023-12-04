@@ -17,7 +17,7 @@ def getinput():
     return sys.argv[1]
 
 
-def load_urls_from_file(filename: str):
+def load_ids_from_file(filename: str):
     if not os.path.isfile(filename):
         print(f"{filename} does not exists.", file=sys.stderr)
         exit(1)
@@ -27,7 +27,7 @@ def load_urls_from_file(filename: str):
 
 def main():
     arxivfile = getinput()
-    arxivids = load_urls_from_file(arxivfile)
+    arxivids = load_ids_from_file(arxivfile)
     for arxivid in arxivids:
         r = requests.get(
             f"https://inspirehep.net/api/arxiv/{arxivid.strip()}?format=bibtex"
