@@ -37,7 +37,6 @@ def main():
             print("Could not file URL for", arxivid, file=sys.stderr)
             continue
         print(r.text)
-        print()
 
 
 if __name__ == "__main__":
